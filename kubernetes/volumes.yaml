@@ -1,0 +1,66 @@
+# Create PersistentVolume
+# change the ip of NFS server
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: wordpress-persistent-storage
+  labels:
+    app: wordpress
+    tier: frontend
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 6Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/c/Users/RafaelVelez/Documents/agtdemo/mnt/wordpress"
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-persistent-storage
+  labels:
+    app: wordpress
+    tier: mysql
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 6Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/c/Users/RafaelVelez/Documents/agtdemo/mnt/mysql"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: json-server-persistent-storage
+  labels:
+    app: json-server
+    tier: backend
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 6Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/c/Users/RafaelVelez/Documents/agtdemo/mnt/json-server"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: php-persistent-storage
+  labels:
+    app: php-server
+    tier: backend
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 6Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/c/Users/RafaelVelez/Documents/agtdemo/portal"

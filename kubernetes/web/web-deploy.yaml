@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: web
+  namespace: andesgt
+  labels:
+    app: web
+spec:
+  ports:
+    - port: 80
+  selector:
+    app: web
+    tier: frontend
+  type: ClusterIP
+---
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: web
+  namespace: andesgt
+  labels:
+    app: web
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+      tier: frontend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: web
+        tier: frontend
+    spec:
+      containers:
+      - image: php:7.0-apache
+        name: web
+        ports:
+        - containerPort: 80
+          name: web
+        volumeMounts:
+        - name: web-persistent-storage
+          mountPath: "/var/www/html"
+      volumes:
+      - name: web-persistent-storage
+        persistentVolumeClaim:
+          claimName: web-persistent-storage

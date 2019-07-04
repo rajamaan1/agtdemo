@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: bananas   
+  namespace: andesgt
+  labels:               
+    app: bananas
+spec:
+  ports:
+    - port: 80
+  selector:
+    app: bananas
+    tier: backend
+  type: ClusterIP
+---
+apiVersion:  apps/v1beta2 
+kind: Deployment
+metadata:
+  name: bananas
+  namespace: andesgt
+  labels:
+    app: bananas
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: bananas
+      tier: backend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: bananas
+        tier: backend
+    spec:
+      containers:
+      - image: clue/json-server
+        name: json-server
+        ports:
+        - containerPort: 80
+          name: bananas
+        volumeMounts:
+        - name: bananas-persistent-storage  
+          mountPath: "/data"
+      volumes:
+      - name: bananas-persistent-storage   
+        persistentVolumeClaim:
+          claimName: bananas-persistent-storage

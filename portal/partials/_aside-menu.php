@@ -17,15 +17,21 @@
                             <span class="kt-menu__link"><span class="kt-menu__link-text">Paginas</span></span>
                         </li>
                         <li class="kt-menu__item " aria-haspopup="true" >
-                            <a href="#" class="kt-menu__link ">
+                            <a href="?page=1" class="kt-menu__link ">
                                 <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
-                                <span class="kt-menu__link-text">Pagina 1</span>
+                                <span class="kt-menu__link-text">Ejemplo Tabla</span>
                             </a>
                         </li>
                         <li class="kt-menu__item " aria-haspopup="true" >
-                            <a href="#" class="kt-menu__link ">
+                            <a href="?page=2" class="kt-menu__link ">
                                 <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
-                                <span class="kt-menu__link-text">Pagina 2</span>
+                                <span class="kt-menu__link-text">Ejemplo Graficas</span>
+                            </a>
+                        </li>
+                        <li class="kt-menu__item " aria-haspopup="true" >
+                            <a href="?page=3" class="kt-menu__link ">
+                                <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
+                                <span class="kt-menu__link-text">Ejemplo Consulta Servicio</span>
                             </a>
                         </li>
                     </ul>

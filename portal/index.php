@@ -19,6 +19,7 @@
         <!--end::Fonts -->
         <!--begin::Page Vendors Styles(used by this page) -->
         <link href="./assets/vendors/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+
         <!--end::Page Vendors Styles -->
         <!--begin::Global Theme Styles(used by all pages) -->
         <link href="./assets/vendors/global/vendors.bundle.css" rel="stylesheet" type="text/css" />
@@ -62,12 +63,15 @@
         <script src="./assets/js/demo12/scripts.bundle.js" type="text/javascript"></script>
         <!--end::Global Theme Bundle -->
         <!--begin::Page Vendors(used by this page) -->
+        <script src="./assets/vendors/custom/flot/flot.bundle.js" type="text/javascript"></script>
         <script src="./assets/vendors/custom/fullcalendar/fullcalendar.bundle.js" type="text/javascript"></script>
         <script src="//maps.google.com/maps/api/js?key=AIzaSyBTGnKT7dt597vo9QgeQ7BFhvSRP4eiMSM" type="text/javascript"></script>
         <script src="./assets/vendors/custom/gmaps/gmaps.js" type="text/javascript"></script>
         <!--end::Page Vendors -->
         <!--begin::Page Scripts(used by this page) -->
         <script src="./assets/js/demo12/pages/dashboard.js" type="text/javascript"></script>
+        <script src="./assets/js/demo12/pages/crud/metronic-datatable/base/data-json.js" type="text/javascript"></script>
+        <script src="./assets/js/demo12/pages/components/charts/flotcharts.js" type="text/javascript"></script>
         <!--end::Page Scripts -->
     </body>
     <!-- end::Body -->

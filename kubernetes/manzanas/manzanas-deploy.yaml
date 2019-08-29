@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: manzanas
+  namespace: andesgt
+  labels:
+    app: manzanas
+spec:
+  ports:
+    - port: 80
+  selector:
+    app: manzanas
+    tier: backend
+  type: ClusterIP
+---
+apiVersion:  apps/v1beta2
+kind: Deployment
+metadata:
+  name: manzanas
+  namespace: andesgt
+  labels:
+    app: manzanas
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: manzanas
+      tier: backend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: manzanas
+        tier: backend
+    spec:
+      containers:
+      - image: clue/json-server
+        name: manzanas
+        ports:
+        - containerPort: 80
+          name: manzanas
+        volumeMounts:
+        - name: manzanas-persistent-storage
+          mountPath: "/data"
+      volumes:
+      - name: manzanas-persistent-storage
+        persistentVolumeClaim:
+          claimName: manzanas-persistent-storage

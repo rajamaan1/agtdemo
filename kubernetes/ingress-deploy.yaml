@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-andesgt
+  namespace: andesgt
+spec:
+  rules:
+  - host: andesgt.local
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: web
+          servicePort: 80
+  - host: andesgt.local
+    http:
+      paths:
+      - path: /service/data
+        backend:
+          serviceName: manzanas
+          servicePort: 80

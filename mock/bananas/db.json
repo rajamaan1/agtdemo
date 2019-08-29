@@ -1,0 +1,8 @@
+{
+  "fruits": [
+    { "id": 1, "title": "bananas", "author": "banana master" }
+  ],
+  "recipes": [
+    { "id": 1, "name": "banana smothie" }
+  ]
+}

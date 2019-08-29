@@ -14,7 +14,7 @@ spec:
   accessModes:
     - ReadWriteMany
   hostPath:
-    path: "/c/Users/RafaelVelez/Documents/agtdemo/mnt/wordpress"
+    path: "/c/Users/ajaramillo/Documents/agtdemo/mnt/wordpress"
 
 ---
 apiVersion: v1
@@ -31,7 +31,7 @@ spec:
   accessModes:
     - ReadWriteMany
   hostPath:
-    path: "/c/Users/RafaelVelez/Documents/agtdemo/mnt/mysql"
+    path: "/c/Users/ajaramillo/Documents/agtdemo/mnt/mysql"
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -47,7 +47,7 @@ spec:
   accessModes:
     - ReadWriteMany
   hostPath:
-    path: "/c/Users/RafaelVelez/Documents/agtdemo/mnt/json-server"
+    path: "/c/Users/ajaramillo/Documents/agtdemo/mnt/json-server"
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -63,4 +63,4 @@ spec:
   accessModes:
     - ReadWriteMany
   hostPath:
-    path: "/c/Users/RafaelVelez/Documents/agtdemo/portal"
+    path: "/c/Users/ajaramillo/Documents/agtdemo/portal"
